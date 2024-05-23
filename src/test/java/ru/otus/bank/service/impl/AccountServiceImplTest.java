@@ -77,7 +77,7 @@ public class AccountServiceImplTest {
 
         verify(accountDao).save(argThat(sourceMatcher));
         verify(accountDao).save(argThat(destinationMatcher));
-        }
+    }
 
     @Test
     public void testAddAccount() {
@@ -113,6 +113,7 @@ public class AccountServiceImplTest {
         assertEquals(expectedAmount, result.getAmount());
         assertEquals(expectedAgreementId, result.getAgreementId());
     }
+
     @Test
     public void testCharge() {
         Long testAccountId = 1L;
