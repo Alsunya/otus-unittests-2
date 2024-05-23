@@ -5,6 +5,7 @@ import ru.otus.bank.entity.Account;
 import java.util.HashMap;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
 
 public class AccountDao {
 
@@ -15,7 +16,7 @@ public class AccountDao {
     public Iterable<Account> findByAgreementId(Long agreementId) {
         return accountMap.values().stream()
                 .filter(account -> account.getAgreementId().equals(agreementId))
-                .toList();
+                .collect(Collectors.toList());
     }
 
     public Optional<Account> findById(Long accountId) {
